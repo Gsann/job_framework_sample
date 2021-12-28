@@ -15,7 +15,7 @@ public class CustomerTest {
 
     private static final String CUSTOMER_NAME = "テスト";
 
-    private Customer sut = new Customer(CUSTOMER_NAME);
+    private BusinessLogic sut = new BusinessLogic();
 
     @DataPoints
     public static Fixture[] testDatas = {
@@ -45,7 +45,7 @@ public class CustomerTest {
         }
 
         // 【テスト実施】
-        String result = sut.statement();
+        String result = sut.statement(CUSTOMER_NAME);
 
         // 【テスト結果の検証】
         // 期待値作成
