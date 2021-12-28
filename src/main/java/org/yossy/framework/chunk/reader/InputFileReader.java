@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import org.yossy.framework.chunk.file.FileController;
+import org.yossy.framework.chunk.reader.param.ReaderParameter;
 
 public abstract class InputFileReader extends FileController {
 
@@ -51,6 +52,6 @@ public abstract class InputFileReader extends FileController {
 
     public abstract boolean isNextLine() throws IOException;
 
-    public abstract String getLine();
+    public abstract ReaderParameter getParam();
 
 }

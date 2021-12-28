@@ -3,6 +3,8 @@ package org.yossy.framework.chunk.reader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
+import org.yossy.framework.chunk.reader.param.ReaderParameter;
+
 public class SimpleLineFileReader extends InputFileReader {
 
     private String line;
@@ -26,7 +28,7 @@ public class SimpleLineFileReader extends InputFileReader {
         return true;
     }
 
-    public String getLine() {
-        return this.line;
+    public ReaderParameter getParam() {
+        return new ReaderParameter.Builder().of(this.line).build();
     }
 }
