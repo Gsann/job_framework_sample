@@ -43,8 +43,8 @@ public class ChunkController {
     public ChunkController run() throws Exception {
         if (this.reader == null || this.writer == null || this.worker == null) throw new Exception();
         try (BufferedWriter localWriter = Files.newBufferedWriter(this.writer.getPath(), this.writer.getCharset())) {
-            while (reader.isNextLine()) {
-                localWriter.append(worker.execute(reader.getLine()));
+            while (this.reader.isNextLine()) {
+                localWriter.append(this.worker.execute(this.reader.getLine()));
                 localWriter.newLine();
             }
         } catch (IOException e) {
